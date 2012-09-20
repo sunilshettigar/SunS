@@ -26,6 +26,14 @@
                     // use the person object as appropriate
 
                     alert(response);
+                    var theActivityFeed = '';
+                    var theActivityList = response.list;
+                    for (var i = 0; i < theActivityList.length; i++) {
+                        theActivityFeed += theActivityList[i].title + '<br />-' + theActivityList[i].verb + '<br />******************************<br />';
+                    }
+
+                    alert('theActivityFeed = ' + theActivityFeed);
+                    document.getElementById("content").innerHTML = theActivityFeed;
                 }
             });
         }
@@ -40,9 +48,10 @@
 
         <div id="content">
             Content here.
-            <input type="button" id="btnSubmit" value="Get Response" onclick="Javascript:fncSubmit();" />
+            
         </div>
-    
+        <input type="button" id="btnSubmit" value="Get Response" onclick="Javascript:fncSubmit();" />
+
     </div>
     <br /><br />
     --- Footer here ---
