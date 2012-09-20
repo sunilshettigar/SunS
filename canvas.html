@@ -10,7 +10,7 @@
             alert('Submit clicked');
 
             // get the request that will fetch a person by username
-            var request = osapi.jive.corev3.people.get({ username: 'sunil.shettigar' });
+            var request = osapi.jive.corev3.activities.get();
 
             // execute the request
             request.execute(function (response) {
@@ -19,13 +19,13 @@
                     var message = response.error.message;
                     // present the user with an appropriate error message
 
-                    alert('Error occured : ' + message.toString());
+                    alert('Error occured : ' + message);
                 }
                 else {
-                    var person = response;
+                    //var theResponseObj = response;
                     // use the person object as appropriate
 
-                    alert(person.displayName);
+                    alert(response);
                 }
             });
         }
@@ -40,7 +40,7 @@
 
         <div id="content">
             Content here.
-            <input type="button" id="btnSubmit" onclick="Javascript:fncSubmit()" />
+            <input type="button" id="btnSubmit" value="Get Response" onclick="Javascript:fncSubmit();" />
         </div>
     
     </div>
