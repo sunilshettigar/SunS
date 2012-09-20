@@ -6,24 +6,28 @@
 
     <script type="text/javascript" >
 
-        // get the request that will fetch a person by username
-        var request = osapi.jive.corev3.people.get({username: 'sunil.shettigar'});
+        function fncSubmit() {
+            alert('Submit clicked');
 
-        // execute the request
-        request.execute(function(response) {
-            if (response.error) {
-                var code = response.error.code;
-                var message = response.error.message;
-                // present the user with an appropriate error message
+            // get the request that will fetch a person by username
+            var request = osapi.jive.corev3.people.get({ username: 'sunil.shettigar' });
 
-                alert('Error occured : ' + message.toString());
-            } 
-            else {
-                var person = response;
-                // use the person object as appropriate
+            // execute the request
+            request.execute(function (response) {
+                if (response.error) {
+                    var code = response.error.code;
+                    var message = response.error.message;
+                    // present the user with an appropriate error message
 
-                alert(person.displayName);
-            }
+                    alert('Error occured : ' + message.toString());
+                }
+                else {
+                    var person = response;
+                    // use the person object as appropriate
+
+                    alert(person.displayName);
+                }
+            });
         }
 
     </script>
@@ -36,6 +40,7 @@
 
         <div id="content">
             Content here.
+            <input type="button" id="btnSubmit" onclick="Javascript:fncSubmit()" />
         </div>
     
     </div>
