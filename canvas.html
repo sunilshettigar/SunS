@@ -29,7 +29,7 @@
                     var theActivityFeed = '';
                     var theActivityList = response.list;
                     for (var i = 0; i < theActivityList.length; i++) {
-                        theActivityFeed += theActivityList[i].title + '<br />-' + theActivityList[i].verb + '<br />******************************<br />';
+                        theActivityFeed += i + '.)' + theActivityList[i].title + '<br />-' + theActivityList[i].verb + '<br />******************************<br />';
                     }
 
                     alert('theActivityFeed = ' + theActivityFeed);
@@ -44,10 +44,10 @@
 <body>
     <div id="mainBody">
         <h2>Test of Js API</h2>
+        <input type="button" id="btnSubmit" value="Get Response" onclick="Javascript:fncSubmit();" />
         <hr />
 
-        <div id="content" style="overflow:auto;height:150px;width:500px;">Content here.</div>
-        <input type="button" id="btnSubmit" value="Get Response" onclick="Javascript:fncSubmit();" />
+        <div id="content" style="overflow:auto;height:100px;width:600px;">Content here.</div>
 
     </div>
     <br /><br />
