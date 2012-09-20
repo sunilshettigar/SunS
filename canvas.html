@@ -6,6 +6,26 @@
 
     <script type="text/javascript" >
 
+        // get the request that will fetch a person by username
+        var request = osapi.jive.corev3.people.get({username: 'sunil.shettigar'});
+
+        // execute the request
+        request.execute(function(response) {
+            if (response.error) {
+                var code = response.error.code;
+                var message = response.error.message;
+                // present the user with an appropriate error message
+
+                alert('Error occured : ' + message.toString());
+            } 
+            else {
+                var person = response;
+                // use the person object as appropriate
+
+                alert(person.displayName);
+            }
+        }
+
     </script>
 </head>
 
